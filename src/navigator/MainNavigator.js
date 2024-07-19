@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAMERA, DASHBOARD, FILEPICKER, IMAGEPREVIEW, MAP, PREVIEW, VIDEOPREVIEW } from '../constant';
+import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, MAP, PREVIEW, VIDEOPREVIEW } from '../constant';
 import { createStackNavigator } from '@react-navigation/stack';
 import DashboardScreen from '../screen/DashboardScreen';
 import MapScreen from '../screen/MapScreen';
@@ -7,6 +7,7 @@ import FilePickerScreen from '../screen/FilePickerScreen';
 import CameraScreen from '../screen/CameraScreen';
 import ImagePreviewScreen from '../screen/ImagePreviewScreen';
 import VideoPlayerScreen from '../screen/VideoPlayerScreen';
+import DatePickerScreen from '../screen/DatePickerScreen';
 
 
 export default function MainNavigator() {
@@ -60,6 +61,14 @@ export default function MainNavigator() {
         }}
         name={VIDEOPREVIEW}
         component={VideoPlayerScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
+        name={DATETIMEPICKER}
+        component={DatePickerScreen}
       />
 
     </Stack.Navigator>

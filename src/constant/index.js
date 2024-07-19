@@ -11,7 +11,7 @@ const APP_NAME = {
   CAMERA: 'Camera',
   IMAGEPREVIEW: 'Image Preview',
   VIDEOPREVIEW: 'Video Preview',
-  SAVED: 'Saved'
+  DATETIMEPICKER: 'Date & Time',
 
 
 

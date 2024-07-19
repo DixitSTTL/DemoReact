@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import { CAMERA, FILEPICKER, MAP } from '../constant';
+import { CAMERA, DATETIMEPICKER, FILEPICKER, MAP } from '../constant';
 
 
 
@@ -13,13 +13,17 @@ function DashboardScreen({navigation}) {
 
             <Button title='Location Screen' onPress={() => navigation.navigate(MAP)} />
 
-            {/* <View style={{ height: 20 }} />
-
-            <Button title='File Picker' onPress={() => navigation.navigate(FILEPICKER)} /> */}
-
             <View style={{ height: 20 }} />
 
             <Button title='Camera' onPress={() => navigation.navigate(CAMERA)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='File Picker' onPress={() => navigation.navigate(FILEPICKER)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='Date Picker' onPress={() => navigation.navigate(DATETIMEPICKER)} />
 
         </View>
 
