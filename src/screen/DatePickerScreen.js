@@ -1,40 +1,38 @@
-import React, { useCallback, useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import DocumentPicker from 'react-native-document-picker';
-import { fonts } from '../assets/fonts/fonts';
-import { IMAGEPREVIEW, VIDEOPREVIEW } from '../constant';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useState } from 'react';
+import { Button, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import DatePicker from 'react-native-date-picker';
+import { darkModeColors, lightModeColors } from '../assets/colors/colors';
 
-const styles = StyleSheet.create({
 
-    maincontainer: {
-        flex: 1,
-    },
-
-    text: {
-        fontSize: 16,
-        paddingVertical: 3,
-        color: "black"
-    },
-
-    button: {
-        borderRadius: 10,
-        backgroundColor: "skyblue",
-        fontSize: 16,
-        textAlign: "center",
-        paddingVertical: 3
-    }
-
-})
-
-function DatePickerScreen({ navigation }) {
+function DatePickerScreen() {
+    const colorTheme = useColorScheme();
+    const color = colorTheme === 'dark' ? darkModeColors : lightModeColors;
     const [mDate, setDate] = useState(new Date())
     const [mTime, setTime] = useState(new Date())
-
     const [openDate, setDateOpen] = useState(false)
     const [openTime, setTimeOpen] = useState(false)
 
+    const styles = StyleSheet.create({
+
+        maincontainer: {
+            flex: 1,
+        },
+    
+        text: {
+            fontSize: 16,
+            paddingVertical: 3,
+            color: color.whiteblackreverse
+        },
+
+        button: {
+            borderRadius: 10,
+            backgroundColor: "skyblue",
+            fontSize: 16,
+            textAlign: "center",
+            paddingVertical: 3
+        }
+    
+    })
 
 
     return (

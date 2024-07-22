@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, MAP, PREVIEW, VIDEOPREVIEW } from '../constant';
+import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, MAP, MULTILANGUAGE, PREVIEW, VIDEOPREVIEW } from '../constant';
 import { createStackNavigator } from '@react-navigation/stack';
 import DashboardScreen from '../screen/DashboardScreen';
 import MapScreen from '../screen/MapScreen';
@@ -8,6 +8,8 @@ import CameraScreen from '../screen/CameraScreen';
 import ImagePreviewScreen from '../screen/ImagePreviewScreen';
 import VideoPlayerScreen from '../screen/VideoPlayerScreen';
 import DatePickerScreen from '../screen/DatePickerScreen';
+import MultiLanguageScreen from '../screen/MultiLanguageScreen';
+import ImageVideoPickerScreen from '../screen/ImageVideoPickerScreen';
 
 
 export default function MainNavigator() {
@@ -51,6 +53,14 @@ export default function MainNavigator() {
         options={{
           headerShown: true,
         }}
+        name={IMAGEVIDEOPICKER}
+        component={ImageVideoPickerScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
         name={IMAGEPREVIEW}
         component={ImagePreviewScreen}
       />
@@ -69,6 +79,14 @@ export default function MainNavigator() {
         }}
         name={DATETIMEPICKER}
         component={DatePickerScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
+        name={MULTILANGUAGE}
+        component={MultiLanguageScreen}
       />
 
     </Stack.Navigator>

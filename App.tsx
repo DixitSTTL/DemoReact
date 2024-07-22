@@ -13,6 +13,7 @@ import {
 
 
 import MainNavigator from './src/navigator/MainNavigator';
+import  './src/assets/Localizestring/i18n';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 

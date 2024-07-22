@@ -1,35 +1,36 @@
 import React, { useCallback, useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
-import { fonts } from '../assets/fonts/fonts';
 import { IMAGEPREVIEW, VIDEOPREVIEW } from '../constant';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { darkModeColors, lightModeColors } from '../assets/colors/colors';
 
-const styles = StyleSheet.create({
 
-    maincontainer: {
-        flex: 1,
-    },
-
-    text: {
-        fontSize: 16,
-        paddingVertical: 3
-    },
-
-    button: {
-        borderRadius: 10,
-        backgroundColor: "skyblue",
-        fontSize: 16,
-        textAlign: "center",
-        paddingVertical: 3
-    }
-
-})
 
 function FilePickerScreen({ navigation }) {
-
+    const colorTheme = useColorScheme();
+    const color = colorTheme === 'dark' ? darkModeColors : lightModeColors;
     const [fileResponse, setFileResponse] = useState([]);
+    const styles = StyleSheet.create({
 
+        maincontainer: {
+            flex: 1,
+        },
+
+        text: {
+            fontSize: 16,
+            paddingVertical: 3,
+            color: color.whiteblackreverse
+        },
+
+        button: {
+            borderRadius: 10,
+            backgroundColor: "skyblue",
+            fontSize: 16,
+            textAlign: "center",
+            paddingVertical: 3
+        }
+
+    })
     const handleDocumentSelection = useCallback(async () => {
         try {
             const response = await DocumentPicker.pick({
@@ -43,35 +44,35 @@ function FilePickerScreen({ navigation }) {
         }
     }, []);
 
-    function viewFile(file){
+    function viewFile(file) {
         try {
 
             console.log(file);
-        
-                switch (file.type) {
 
-                    case "image/png":
-                    case "image/jpg":
-                    case "image/jpeg":
-                    case "image/*":
+            switch (file.type) {
 
-                        navigation.navigate(IMAGEPREVIEW, { url: file.uri })
+                case "image/png":
+                case "image/jpg":
+                case "image/jpeg":
+                case "image/*":
 
-                        break;
+                    navigation.navigate(IMAGEPREVIEW, { url: file.uri })
 
-                    case "video/x-matroska":
-                    case "video/mp4":
+                    break;
 
-                        navigation.navigate(VIDEOPREVIEW, { url: file.uri })
+                case "video/x-matroska":
+                case "video/mp4":
 
-                        break;
+                    navigation.navigate(VIDEOPREVIEW, { url: file.uri })
 
-                    default:
-                        break;
-                }
+                    break;
+
+                default:
+                    break;
+            }
 
 
-        
+
 
         } catch (err) {
             console.warn(err);
@@ -84,13 +85,12 @@ function FilePickerScreen({ navigation }) {
 
             <View style={{ padding: 20 }}>
 
-                <TouchableOpacity onPress={handleDocumentSelection}>
 
-                    <Text
-                        style={[styles.button, {paddingVertical:8  }]}
-                        numberOfLines={1}
-                    >Select</Text>
-                </TouchableOpacity>
+
+                <Button
+                    title='Select'
+                    onPress={handleDocumentSelection}
+                ></Button>
 
 
                 <View style={{ paddingTop: 50 }}>
@@ -117,14 +117,14 @@ function FilePickerScreen({ navigation }) {
                                 type:  {file?.type}
                             </Text>
 
-                            <TouchableOpacity onPress={()=>{viewFile(file)}} style={{paddingTop:12}}>
 
-                                <Text
-                                    key={index.toString()}
-                                    style={[styles.button, { width: 100 ,paddingVertical:6}]}
-                                    numberOfLines={1}
-                                >view</Text>
-                            </TouchableOpacity>
+
+                            <View style={ { width: 100, paddingVertical: 6 }}>
+                                <Button
+                                    title='view'
+                                    onPress={() => { viewFile(file) }}
+                                ></Button>
+                            </View>
 
                         </>
 

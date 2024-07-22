@@ -1,6 +1,5 @@
 import { Appearance } from 'react-native';
 
-const isDark = Appearance.getColorScheme() === 'dark'
 
 type Colors = {
   text: string;
@@ -13,6 +12,8 @@ type Colors = {
 
   white: string;
   black: string;
+  whiteblackreverse: string;
+  whiteblack: string;
 
  
 
@@ -29,6 +30,8 @@ export const lightModeColors: Colors = {
 
   white: "#fff",
   black: "#000",
+  whiteblackreverse: "#000",
+  whiteblack: "#fff",
 
   
 
@@ -46,10 +49,11 @@ export const darkModeColors: Colors = {
 
   white: "#fff",
   black: "#000",
+  whiteblackreverse: "#ffffff",
+  whiteblack: "#000",
 
   
 
 }
 
-export const colors = isDark ? darkModeColors : lightModeColors;
 

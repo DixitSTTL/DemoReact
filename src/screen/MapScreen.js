@@ -1,21 +1,23 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Button, PermissionsAndroid, StyleSheet, Text, View } from 'react-native';
+import { PermissionsAndroid, StyleSheet, Text, View, useColorScheme } from 'react-native';
 import MapView, { Polyline, Marker, } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
-import { colors } from '../assets/colors/colors';
+import {  darkModeColors, lightModeColors } from '../assets/colors/colors';
 
-const styles = StyleSheet.create({
-
-    text: { color: colors.black,    },
-
-    view: { backgroundColor: colors.white, padding: 3, margin: 10, position: "absolute" },
-});
 
 function MapScreen() {
     const [location, setLocation] = useState(false);
     const [response, setResponse] = useState(false);
+    const colorTheme = useColorScheme();
+    const color = colorTheme === 'dark' ? darkModeColors : lightModeColors;
     const mapRef = useRef(null);
 
+    const styles = StyleSheet.create({
+
+        text: { color: color.whiteblackreverse,    },
+    
+        view: { backgroundColor: color.whiteblack, padding: 3, margin: 10, position: "absolute" },
+    });
     const requestLocationPermission = async () => {
         try {
             const granted = await PermissionsAndroid.request(

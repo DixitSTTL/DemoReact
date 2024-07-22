@@ -9,9 +9,11 @@ const APP_NAME = {
   MAP: 'Map',
   FILEPICKER: 'File',
   CAMERA: 'Camera',
+  IMAGEVIDEOPICKER: 'Image & Video Picker',
   IMAGEPREVIEW: 'Image Preview',
   VIDEOPREVIEW: 'Video Preview',
   DATETIMEPICKER: 'Date & Time',
+  MULTILANGUAGE: 'Languages',
 
 
 

@@ -1,0 +1,24 @@
+{
+  "language": "Hindi",
+  "screens": {
+      "intro": {
+          "title": "परिचय स्क्रीन",
+          "text": {
+              "introText": "यह अंग्रेजी में परिचय पाठ है",
+              "login": "लॉग इन करें",
+              "signup": "साइन अप करें"
+          }
+      },
+      "login": {
+          "title": "दाखिल करना",
+          "text": {
+              "login": "login",
+              "emailAddress": "मेल पता",
+              "password": "पासवर्ड",
+              "continue": "जारी रखना",
+              "createAccount": "खाता बनाएं",
+              "forgotPassword": "पासवर्ड भूल गए?"
+          }
+      }
+  }
+}
