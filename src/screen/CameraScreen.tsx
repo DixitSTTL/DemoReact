@@ -29,7 +29,7 @@ function CameraScreen({ navigation }: any) {
   const minZoom = device?.minZoom ?? 1
   const maxZoom = Math.min(device?.maxZoom ?? 1, MAX_ZOOM_FACTOR)
 
-  const requestLocationPermission = async () => {
+  const requestCameraPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.CAMERA,
@@ -47,7 +47,7 @@ function CameraScreen({ navigation }: any) {
     }
   };
   useEffect(() => {
-    requestLocationPermission();
+    requestCameraPermission();
   }, []);
 
 

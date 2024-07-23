@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, MAP, MULTILANGUAGE, PREVIEW, VIDEOPREVIEW } from '../constant';
+import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, PREVIEW, VIDEOPREVIEW } from '../constant';
 import { createStackNavigator } from '@react-navigation/stack';
 import DashboardScreen from '../screen/DashboardScreen';
 import MapScreen from '../screen/MapScreen';
@@ -10,6 +10,7 @@ import VideoPlayerScreen from '../screen/VideoPlayerScreen';
 import DatePickerScreen from '../screen/DatePickerScreen';
 import MultiLanguageScreen from '../screen/MultiLanguageScreen';
 import ImageVideoPickerScreen from '../screen/ImageVideoPickerScreen';
+import DarkModeScreen from '../screen/DarkModeScreen';
 
 
 export default function MainNavigator() {
@@ -87,6 +88,14 @@ export default function MainNavigator() {
         }}
         name={MULTILANGUAGE}
         component={MultiLanguageScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
+        name={LIGHTDARKMODE}
+        component={DarkModeScreen}
       />
 
     </Stack.Navigator>

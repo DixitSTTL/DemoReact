@@ -14,6 +14,7 @@ const APP_NAME = {
   VIDEOPREVIEW: 'Video Preview',
   DATETIMEPICKER: 'Date & Time',
   MULTILANGUAGE: 'Languages',
+  LIGHTDARKMODE: 'Theme',
 
 
 

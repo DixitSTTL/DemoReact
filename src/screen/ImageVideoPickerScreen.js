@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Button, PermissionsAndroid, StyleSheet, Text, ToastAndroid, useColorScheme, View } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { IMAGEPREVIEW, VIDEOPREVIEW } from '../constant';
 import { darkModeColors, lightModeColors } from '../assets/colors/colors';
+import { Platform } from 'react-native';
 
+const OsVersion = Platform.Version;
 
 function ImageVideoPickerScreen({ navigation }) {
     const colorTheme = useColorScheme();
     const color = colorTheme === 'dark' ? darkModeColors : lightModeColors;
-    const [cameraPermission, setCameraPermission] = useState(false);
-    const [readStoragePermission, setStoragePermission] = useState(false);
     const styles = StyleSheet.create({
 
         maincontainer: {
@@ -30,39 +30,66 @@ function ImageVideoPickerScreen({ navigation }) {
             );
             console.log('granted', granted);
             if (granted === 'granted') {
-                setCameraPermission(true);
+                return true
 
             } else {
-                setCameraPermission(false);
+                notifyMessage("Camera permission not granted")
+                return false
 
             }
+
         } catch (err) {
+            return false
         }
     };
+    const requestImagesPermission = async () => {
 
-    const requestStoragePermission = async () => {
+        if (OsVersion < 33) {
+            return true
+        }
+
         try {
             const granted = await PermissionsAndroid.request(
-                PermissionsAndroid.PERMISSIONS.CAMERA,
+                PermissionsAndroid.PERMISSIONS.READ_MEDIA_IMAGES,
 
             );
             console.log('granted', granted);
             if (granted === 'granted') {
-                setStoragePermission(true);
+                return true
 
             } else {
-                setStoragePermission(false);
+                notifyMessage("Read Images permission not granted")
+                return false
 
             }
         } catch (err) {
+            return false
+        }
+    };
+    const requestVideoPermission = async () => {
+        if (OsVersion < 33) {
+            return true
+        }
+
+        try {
+            const granted = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.READ_MEDIA_VIDEO,
+            );
+            console.log('granted', granted);
+            if (granted === 'granted') {
+                return true
+
+            } else {
+                notifyMessage("Read Videos permission not granted")
+                return false
+
+            }
+        } catch (err) {
+            return false
         }
     };
 
 
-    useEffect(() => {
-        requestCameraPermission();
-        // requestStoragePermission();
-    }, []);
 
     const handleImageResponse = (response) => {
         if (response.didCancel) {
@@ -91,8 +118,9 @@ function ImageVideoPickerScreen({ navigation }) {
 
     };
 
-    const captureImage = () => {
-        if (cameraPermission) {
+    const captureImage = async () => {
+        const result = await requestCameraPermission();
+        if (result) {
             const options = {
                 mediaType: 'photo',
                 includeBase64: false,
@@ -101,14 +129,13 @@ function ImageVideoPickerScreen({ navigation }) {
             };
 
             launchCamera(options, handleImageResponse);
-        }
-        else {
-            notifyMessage("Camera permission not granted")
-        }
+        };
+
     };
 
-    const selectImage = () => {
-        // if (readStoragePermission) {
+    const selectImage = async () => {
+        const result = await requestImagesPermission();
+        if (result) {
 
             const options = {
                 mediaType: 'photo',
@@ -118,15 +145,14 @@ function ImageVideoPickerScreen({ navigation }) {
             };
 
             launchImageLibrary(options, handleImageResponse);
-        // }
-        // else {
-        //     notifyMessage("Camera permission not granted")
-        // }
+        };
+
     };
 
-    const recordVideo = () => {
-        if (cameraPermission) {
+    const recordVideo = async () => {
 
+        const result = await requestCameraPermission();
+        if (result) {
             const options = {
                 mediaType: 'video',
                 includeBase64: false,
@@ -135,15 +161,13 @@ function ImageVideoPickerScreen({ navigation }) {
             };
 
             launchCamera(options, handleVideoResponse);
-        }
-        else {
-            notifyMessage("Camera permission not granted")
-        }
+        };
+
     };
 
-    const selectVideo = () => {
-        // if (readStoragePermission) {
-
+    const selectVideo = async () => {
+        const result = await requestVideoPermission();
+        if (result) {
             const options = {
                 mediaType: 'video',
                 includeBase64: false,
@@ -152,10 +176,8 @@ function ImageVideoPickerScreen({ navigation }) {
             };
 
             launchImageLibrary(options, handleVideoResponse);
-        // }
-        // else {
-        //     notifyMessage("Camera permission not granted")
-        // }
+        };
+
     };
 
 

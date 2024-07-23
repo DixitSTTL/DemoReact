@@ -15,6 +15,7 @@ import {
 import MainNavigator from './src/navigator/MainNavigator';
 import  './src/assets/Localizestring/i18n';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import ThemeProvider from './src/assets/colors/ThemeProvider';
 
 
 
@@ -23,7 +24,7 @@ function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-   
+    <ThemeProvider>
     <SafeAreaProvider>
       <NavigationContainer
         theme={isDarkMode ? DarkTheme : DefaultTheme}
@@ -31,6 +32,8 @@ function App(): React.JSX.Element {
         <MainNavigator />
       </NavigationContainer>
     </SafeAreaProvider>
+    </ThemeProvider>
+
   );
 }
 

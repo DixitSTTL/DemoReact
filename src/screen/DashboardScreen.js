@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import { CAMERA, DATETIMEPICKER, FILEPICKER, IMAGEVIDEOPICKER, MAP, MULTILANGUAGE } from '../constant';
+import { CAMERA, DATETIMEPICKER, FILEPICKER, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE } from '../constant';
 
 
 
-function DashboardScreen({navigation}) {
+function DashboardScreen({ navigation }) {
 
     return (
 
@@ -19,19 +19,23 @@ function DashboardScreen({navigation}) {
 
             <View style={{ height: 20 }} />
 
-            <Button title='Image & Video Picker' onPress={() => navigation.navigate(IMAGEVIDEOPICKER)} />
-
-            <View style={{ height: 20 }} />
-
             <Button title='File Picker' onPress={() => navigation.navigate(FILEPICKER)} />
 
             <View style={{ height: 20 }} />
 
             <Button title='Date Picker' onPress={() => navigation.navigate(DATETIMEPICKER)} />
+           
+            <View style={{ height: 20 }} />
+
+            <Button title='Image & Video Picker' onPress={() => navigation.navigate(IMAGEVIDEOPICKER)} />
 
             <View style={{ height: 20 }} />
 
             <Button title='Multi Language' onPress={() => navigation.navigate(MULTILANGUAGE)} />
+
+            {/* <View style={{ height: 20 }} />
+
+            <Button title='Theme' onPress={() => navigation.navigate(LIGHTDARKMODE)} /> */}
 
         </View>
 
