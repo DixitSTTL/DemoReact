@@ -15,6 +15,8 @@ const APP_NAME = {
   DATETIMEPICKER: 'Date & Time',
   MULTILANGUAGE: 'Languages',
   LIGHTDARKMODE: 'Theme',
+  REDUX: 'Redux',
+  REDUXLIST: 'ReduxList',
 
 
 

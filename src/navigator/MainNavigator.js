@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, PREVIEW, VIDEOPREVIEW } from '../constant';
+import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, REDUX, REDUXLIST, VIDEOPREVIEW } from '../constant';
 import { createStackNavigator } from '@react-navigation/stack';
 import DashboardScreen from '../screen/DashboardScreen';
 import MapScreen from '../screen/MapScreen';
@@ -11,6 +11,8 @@ import DatePickerScreen from '../screen/DatePickerScreen';
 import MultiLanguageScreen from '../screen/MultiLanguageScreen';
 import ImageVideoPickerScreen from '../screen/ImageVideoPickerScreen';
 import DarkModeScreen from '../screen/DarkModeScreen';
+import ReduxScreen from '../screen/ReduxScreen';
+import ReduxListScreen from '../screen/ReduxListScreen';
 
 
 export default function MainNavigator() {
@@ -96,6 +98,22 @@ export default function MainNavigator() {
         }}
         name={LIGHTDARKMODE}
         component={DarkModeScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
+        name={REDUX}
+        component={ReduxScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
+        name={REDUXLIST}
+        component={ReduxListScreen}
       />
 
     </Stack.Navigator>

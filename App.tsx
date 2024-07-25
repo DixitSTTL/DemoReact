@@ -13,9 +13,11 @@ import {
 
 
 import MainNavigator from './src/navigator/MainNavigator';
-import  './src/assets/Localizestring/i18n';
+import './src/assets/Localizestring/i18n';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import ThemeProvider from './src/assets/colors/ThemeProvider';
+import { Provider } from 'react-redux';
+import store from './src/redux/store';
 
 
 
@@ -25,13 +27,15 @@ function App(): React.JSX.Element {
 
   return (
     <ThemeProvider>
-    <SafeAreaProvider>
-      <NavigationContainer
-        theme={isDarkMode ? DarkTheme : DefaultTheme}
-      >
-        <MainNavigator />
-      </NavigationContainer>
-    </SafeAreaProvider>
+      <Provider store={store}>
+        <SafeAreaProvider>
+          <NavigationContainer
+            theme={isDarkMode ? DarkTheme : DefaultTheme}
+          >
+            <MainNavigator />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </Provider>
     </ThemeProvider>
 
   );

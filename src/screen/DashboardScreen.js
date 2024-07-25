@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import { CAMERA, DATETIMEPICKER, FILEPICKER, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE } from '../constant';
+import { CAMERA, DATETIMEPICKER, FILEPICKER, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, REDUX, REDUXLIST } from '../constant';
 
 
 
@@ -32,6 +32,14 @@ function DashboardScreen({ navigation }) {
             <View style={{ height: 20 }} />
 
             <Button title='Multi Language' onPress={() => navigation.navigate(MULTILANGUAGE)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='Redux' onPress={() => navigation.navigate(REDUX)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='Redux List' onPress={() => navigation.navigate(REDUXLIST)} />
 
             {/* <View style={{ height: 20 }} />
 
