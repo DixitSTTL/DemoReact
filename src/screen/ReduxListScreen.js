@@ -7,7 +7,7 @@ import { addToDoAction, removeToDoAction } from '../redux/ToDo/todoAction';
 
 class ReduxListScreen extends React.Component {
 
-    constructor(props: any) {
+    constructor(props) {
         super(props);
         this.state = {
             text: "",

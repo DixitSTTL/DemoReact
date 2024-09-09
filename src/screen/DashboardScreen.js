@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import { CAMERA, DATETIMEPICKER, FILEPICKER, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, REDUX, REDUXLIST } from '../constant';
+import { ANIMATIONSCREEN, CAMERA, CONTINENTSLISTSCREEN, DATETIMEPICKER, FILEPICKER, GYROSCOPESCREEN, IMAGEVIDEOPICKER, MAP, MULTILANGUAGE, REDUX, REDUXLIST } from '../constant';
 
 
 
@@ -40,6 +40,18 @@ function DashboardScreen({ navigation }) {
             <View style={{ height: 20 }} />
 
             <Button title='Redux List' onPress={() => navigation.navigate(REDUXLIST)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='Continent List' onPress={() => navigation.navigate(CONTINENTSLISTSCREEN)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='Animations' onPress={() => navigation.navigate(ANIMATIONSCREEN)} />
+
+            <View style={{ height: 20 }} />
+
+            <Button title='Gyroscope' onPress={() => navigation.navigate(GYROSCOPESCREEN)} />
 
             {/* <View style={{ height: 20 }} />
 

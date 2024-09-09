@@ -5,6 +5,7 @@ export const images = {
     ic_camera: require("./ic_camera.png"),
     ic_video: require("./ic_video.png"),
     ic_stop: require("./ic_stop.png"),
+    ic_arrow: require("./arrowright.png"),
 
   };
   

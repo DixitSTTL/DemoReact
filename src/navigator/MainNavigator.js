@@ -1,6 +1,6 @@
 import React from 'react';
-import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, REDUX, REDUXLIST, VIDEOPREVIEW } from '../constant';
-import { createStackNavigator } from '@react-navigation/stack';
+import { CAMERA, DASHBOARD, DATETIMEPICKER, FILEPICKER, IMAGEPREVIEW, IMAGEVIDEOPICKER, LIGHTDARKMODE, MAP, MULTILANGUAGE, REDUX, REDUXLIST, VIDEOPREVIEW, ANIMATIONSCREEN, ANIMATIONSCREEN2, GYROSCOPESCREEN, CONTINENTSLISTSCREEN } from '../constant';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardScreen from '../screen/DashboardScreen';
 import MapScreen from '../screen/MapScreen';
 import FilePickerScreen from '../screen/FilePickerScreen';
@@ -13,10 +13,14 @@ import ImageVideoPickerScreen from '../screen/ImageVideoPickerScreen';
 import DarkModeScreen from '../screen/DarkModeScreen';
 import ReduxScreen from '../screen/ReduxScreen';
 import ReduxListScreen from '../screen/ReduxListScreen';
+import AnimationScreen from '../screen/AnimationScreen';
+import AnimationScreen2 from '../screen/AnimationScreen2';
+import GyroscopScreen from '../screen/GyroscopScreen';
+import ContinentsListScreen from '../screen/ContinentsListScreen';
 
 
 export default function MainNavigator() {
-  const Stack = createStackNavigator();
+  const Stack = createNativeStackNavigator();
 
   return (
     <Stack.Navigator initialRouteName={DASHBOARD}>
@@ -114,6 +118,38 @@ export default function MainNavigator() {
         }}
         name={REDUXLIST}
         component={ReduxListScreen}
+      />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+        }}
+        name={CONTINENTSLISTSCREEN}
+        component={ContinentsListScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          animation:"fade",
+        }}
+        name={ANIMATIONSCREEN}
+        component={AnimationScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          animation:"fade"
+        }}
+        name={ANIMATIONSCREEN2}
+        component={AnimationScreen2}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          animation:"fade"
+        }}
+        name={GYROSCOPESCREEN}
+        component={GyroscopScreen}
       />
 
     </Stack.Navigator>

@@ -17,6 +17,10 @@ const APP_NAME = {
   LIGHTDARKMODE: 'Theme',
   REDUX: 'Redux',
   REDUXLIST: 'ReduxList',
+  ANIMATIONSCREEN: 'AnimationScreen',
+  ANIMATIONSCREEN2: 'AnimationScreen2',
+  GYROSCOPESCREEN: 'GyroscopScreen',
+  CONTINENTSLISTSCREEN: 'ContinentsListScreen',
 
 
 
