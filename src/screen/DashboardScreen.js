@@ -11,47 +11,47 @@ function DashboardScreen({ navigation }) {
         <View style={{ flex: 1, margin: 16 }}>
             <View style={{ height: 20 }} />
 
-            <Button title='Location Screen' onPress={() => navigation.navigate(MAP)} />
+            <Button title='Location Screen' onPress={() => navigation.navigate(MAP)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='Camera' onPress={() => navigation.navigate(CAMERA)} />
+            <Button title='Camera' onPress={() => navigation.navigate(CAMERA)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='File Picker' onPress={() => navigation.navigate(FILEPICKER)} />
+            <Button title='File Picker' onPress={() => navigation.navigate(FILEPICKER)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='Date Picker' onPress={() => navigation.navigate(DATETIMEPICKER)} />
+            <Button title='Date Picker' onPress={() => navigation.navigate(DATETIMEPICKER)} color={"red"}/>
            
             <View style={{ height: 20 }} />
 
-            <Button title='Image & Video Picker' onPress={() => navigation.navigate(IMAGEVIDEOPICKER)} />
+            <Button title='Image & Video Picker' onPress={() => navigation.navigate(IMAGEVIDEOPICKER)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='Multi Language' onPress={() => navigation.navigate(MULTILANGUAGE)} />
+            <Button title='Multi Language' onPress={() => navigation.navigate(MULTILANGUAGE)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='Redux' onPress={() => navigation.navigate(REDUX)} />
+            <Button title='Redux' onPress={() => navigation.navigate(REDUX)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='Redux List' onPress={() => navigation.navigate(REDUXLIST)} />
+            <Button title='Redux List' onPress={() => navigation.navigate(REDUXLIST)} color={"red"}/>
 
             <View style={{ height: 20 }} />
 
-            <Button title='Continent List' onPress={() => navigation.navigate(CONTINENTSLISTSCREEN)} />
+            <Button title='Continent List' onPress={() => navigation.navigate(CONTINENTSLISTSCREEN)} color={"red"} />
 
             <View style={{ height: 20 }} />
 
-            <Button title='Animations' onPress={() => navigation.navigate(ANIMATIONSCREEN)} />
+            <Button title='Animations' onPress={() => navigation.navigate(ANIMATIONSCREEN)} color={"red"} />
 
             <View style={{ height: 20 }} />
 
-            <Button title='Gyroscope' onPress={() => navigation.navigate(GYROSCOPESCREEN)} />
+            <Button title='Gyroscope' onPress={() => navigation.navigate(GYROSCOPESCREEN)} color={"red"} />
 
             {/* <View style={{ height: 20 }} />
 
